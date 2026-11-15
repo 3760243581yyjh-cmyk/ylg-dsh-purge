@@ -1,0 +1,108 @@
+{
+  "name": "dsh-purge",
+  "version": "2.4.1",
+  "description": "dsh-purge open-mode: 解放智能体的全部功能 (merged community build)",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./client.js",
+    "./redteam": "./lib/redteam/index.js",
+    "./redteam/store": "./lib/redteam/store.js",
+    "./redteam/ui": "./lib/redteam/ui.js",
+    "./redteam/tools": "./lib/redteam/tools.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-purge": "bin/dsh-purge.js"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "docs",
+    "presets",
+    "skills",
+    "scripts",
+    "client.js",
+    "cordis.patch.yml",
+    "screenshots.json",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "NOTICE",
+    "INSTALL.md",
+    "CREDITS.md",
+    "DISCLAIMER.md"
+  ],
+  "scripts": {
+    "embed-prompt": "node scripts/embed-default-prompt.mjs",
+    "build:client": "node scripts/build-client.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/run-checks.mjs"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-plugins",
+    "网络安全",
+    "红队评测",
+    "llm-security",
+    "harness-security",
+    "deepseek-harness",
+    "red-team",
+    "instructions",
+    "rules",
+    "prompt-eval",
+    "agent"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3760243581yyjh-cmyk/ylg-dsh-purge.git"
+  },
+  "homepage": "https://github.com/3760243581yyjh-cmyk/ylg-dsh-purge#readme",
+  "bugs": {
+    "url": "https://github.com/3760243581yyjh-cmyk/ylg-dsh-purge/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "engines": {
+    "node": ">=22.13.0",
+    "dsh": ">=0.2.0-rc.1 <0.3.0"
+  },
+  "dshTarget": "0.2.2-rc.3",
+  "dshTargets": [
+    "0.2.2-rc.3",
+    "0.2.2-rc.2",
+    "0.2.2-rc.1",
+    "0.2.1-rc.5",
+    "0.2.1-rc.3",
+    "0.2.1-rc.2",
+    "0.2.1-rc.1",
+    "0.2.0-rc.2"
+  ],
+  "upstream": "https://github.com/YuJunZhiXue/dsh-purge",
+  "fork": "merged community build: realMisakaMikoto 1.2.3 base + dsh-purge-deep message layer + yu cwd fallback + LanJinGod patch-effect; targets dsh 0.2.2-rc.1 / 0.2.1-rc.5 / rc.3 / rc.2 / rc.1 / 0.2.0-rc.2"
+}
